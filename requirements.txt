@@ -1,1 +1,2 @@
-mpremote
+tensorflow>=2.12
+numpy

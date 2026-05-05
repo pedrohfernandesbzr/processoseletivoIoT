@@ -1,24 +1,19 @@
 {
-    "name": "Pyton Enviroment",
-    "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
-    "features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {} 
-    },
-	"postCreateCommand": "pip install mpremote",
+  "name": "Python ML Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
 
-    // Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			"settings": {},
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
-                "ms-python.python",
-				"wokwi.wokwi-vscode"
-			]
-		}
-	},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.terminal.activateEnvironment": true
+      }
+    }
+  },
 
-	"privileged": true,
-	// "remoteUser": "root"
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt"
 }
